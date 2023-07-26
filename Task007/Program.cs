@@ -20,3 +20,5 @@ else
 {
     Console.WriteLine($"{number} - НЕ трёхзначное число");
 }
+int result2 = number / 100; // Первая цифра трехзначного числа
+int result3 = number / 10 % 10 // Вторая цифра трехзначного числа
