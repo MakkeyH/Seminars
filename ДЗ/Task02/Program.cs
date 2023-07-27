@@ -6,11 +6,15 @@
 // a = -9 b = -3 -> max = -3
 
 Console.WriteLine("Введите два целых числа");
+int number = Convert.ToInt32(Console.ReadLine());
 int max = Convert.ToInt32(Console.ReadLine());
-int min = Convert.ToInt32(Console.ReadLine());
-if (min < max)
-{
-    Console.WriteLine($"{max}");
-}
 
+if (number > max)
+{
+    Console.WriteLine($"Число {number} - большее,число {max} - меньшее");
+}
+else
+{
+    Console.WriteLine($"Число {max} - большее, число {number} - меньшее");
+}
 
