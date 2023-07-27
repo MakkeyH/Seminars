@@ -12,8 +12,5 @@ if (min < max)
 {
     Console.WriteLine($"{max}");
 }
-else
-{
-    Console.WriteLine($"{min}");
-}
+
 
