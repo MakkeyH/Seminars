@@ -11,16 +11,11 @@ if (number <= 0)
 }
 else
 {
-    int count = number;
-    if (count % 2 == 0)
+    int count = 2;
+    while (count <= number)
     {
-        // Console.Write($"{count} - Чётное число");
-        count = count - 0;
-    }
-    else if (count % 2 != 0)
-    {
-        // Console.Write($"{count} - Нечётное число");
-        count = count - 1;
+        Console.Write($"{count} ");
+        count = count + 2;
     }
 }
 
