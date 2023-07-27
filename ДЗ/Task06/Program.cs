@@ -6,11 +6,11 @@
 
 Console.WriteLine("Введите целое число");
 int number = Convert.ToInt32(Console.ReadLine());
-if(number % 2 == 0)
+if(number % 2 == 0) // число делится без остатка на 2
 {
-    Console.WriteLine($"Число {number} - чётное");
+    Console.WriteLine($"Число {number} - является чётным");
 }
 else
 {
-    Console.WriteLine($"Число{number} - нечётное");
+    Console.WriteLine($"Число{number} - не является чётным");
 }
