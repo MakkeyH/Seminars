@@ -15,7 +15,7 @@ else
     int result = ThirdRank(number);
     int ThirdRank(int number)
     {
-    while(number > 999)
+    while(number > 999 || -999 > number)
     {
         number /=10;
     }
