@@ -6,20 +6,22 @@
 
 Console.WriteLine("Введите целое число");
 int number = Convert.ToInt32(Console.ReadLine());
-if (-100 <= number && number <= 100)
+if(-100 <= number && number <= 100)
 {
     Console.WriteLine($"У числа {number} нет третьей цифры");
 }
-else
 {
-    while(number >= 999)
+    int result = ThirdRank(number);
+    int ThirdRank(int num)
     {
-        int result = ThreeDigit(number);
-        int ThreeDigit(int num)
-        {
-            int threeDigit = num / 10 % 10;
-            return threeDigit;
-        }
-        Console.WriteLine($"Третья цифра числа {number} - {result}");
+    while(number > 999)
+    {
+        num /=10;
     }
+    return num % 10;
+    }
+    Console.WriteLine($"Третья цифра числа {number} - {result}"); 
 }
+
+
+ 
