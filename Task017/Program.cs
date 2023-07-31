@@ -5,9 +5,9 @@
 
 Console.WriteLine("Введите координаты точки");
 Console.Write("X: ");
-xCoordinate = Convert.ToInt32(Console.ReadLine());
+int xCoordinate = Convert.ToInt32(Console.ReadLine());
 Console.Write("Y: ");
-yCoordinate = Convert.ToInt32(Console.ReadLine());
+int yCoordinate = Convert.ToInt32(Console.ReadLine());
 
 int quarter = Quarter(xCoordinate, yCoordinate);
 string result = quarter > 0
