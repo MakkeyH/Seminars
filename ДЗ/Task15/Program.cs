@@ -6,12 +6,13 @@
 
 Console.WriteLine("Введите целое число");
 int a = Convert.ToInt32(Console.ReadLine());
-if(0 < a <=7)
-{
 int weekday = Weekday(a);
+if(0 < a && a <=7)
+{
 bool Weekday(int num)
 {
-    return num == 6 && num == 7 || num !=6 && num !=7;
+    if (num == 1) return weekday;
+    if (num == 2) return weekday;
 }
 Console.WriteLine(weekday ? "Выходной,ура!" : "Рабочий день");
 }

@@ -4,9 +4,6 @@
 // 782 -> 8
 // 918 -> 1
 
-using System.Linq.Expressions;
-using System.Runtime.InteropServices;
-
 Console.WriteLine("Введите целое число");
 int number = Convert.ToInt32(Console.ReadLine());
 if(100 <= number && 1000 > number || -100 >= number && -1000 < number)
