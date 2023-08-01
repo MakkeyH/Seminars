@@ -7,11 +7,20 @@
 
 Console.WriteLine("Введите число");
 int number = Convert.ToInt32(Console.ReadLine());
-if (number < 99999 && number < -99999)
+if (9999 >= number && number < 99999)
 {
-    int Palindrom(int number);
-    Palindrom(num)
-    {
-        
-    }
+    Console.WriteLine($"Число {number} нам не подходит");
 }
+else
+{
+    int first = number / 10000;
+    int second = number / 1000 % 10;
+    int fourth = number / 10 % 10;
+    int fifth = number % 10;
+    if (first == fifth && second == fourth)
+    {
+        Console.WriteLine($"{number} является палиндромом");
+    }
+    else Console.WriteLine($"{number} не является палиндромом");
+}
+
