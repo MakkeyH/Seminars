@@ -49,3 +49,29 @@ Console.Write("->");
 
 PrintArray(resultArray);
 Console.WriteLine();
+
+// double[] CreateArrayRndInt(int size, int min, int max) - нахождение вешественных чисел
+// {
+//     double[] arr = new int[size];
+//     Random rnd = new Random();
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+//         arr[i] = rnd.NextDouble() * (max - min) + min; - формула нахождения вещественных чисел
+//     }
+//     return arr;
+// }
+
+// void PrintArrayDouble(double[] arr, int round = 1) - метод вызова вещественных чисел
+// {
+//     Console.Write("[");
+//     for (int i = 0; i < arr.Length; i++)
+//     {
+// double roundNum = Math.Round(arr[i], 1); - округление вещественного числа до одного знака
+//         if (i < arr.Length - 1) Console.Write($"{roundNum}, ");
+//         else Console.Write($"{roundNum} ");
+
+//     }
+//     Console.Write("]");
+
+
+// PrintArrayDouble(array, 2);
