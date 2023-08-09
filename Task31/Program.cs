@@ -41,9 +41,34 @@ int[] GetSumPositiveNegativeElem(int[] arr)
     return new int[] { sumNegative, sumPositive };
 }
 
+int GetSumPositiveElem(int[] arr)
+{
+    int sum = 0;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i] > 0) sum += arr[i];
+    }
+    return sum;
+}
+
+int GetSumNegativeElem(int[] arr)
+{
+    int sum = 0;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i] < 0) sum += arr[i];
+    }
+    return sum;
+}
+
 int[] array = CreateArrayRndInt(12, -9, 9);
 PrintArray(array);
 Console.WriteLine();
 int[] sumPositiveNegativeElem = GetSumPositiveNegativeElem(array);
 Console.WriteLine($"Сумма отрицательных элементов  = {sumPositiveNegativeElem[0]}");
 Console.WriteLine($"Сумма положительных элементов = {sumPositiveNegativeElem[1]}");
+
+int sumPositiveElem = GetSumPositiveElem(array);
+int sumNegativeElem = GetSumNegativeElem(array);
+Console.WriteLine($"Сумма отрицательных элементов  = {sumNegativeElem}");
+Console.WriteLine($"Сумма положительных элементов = {sumPositiveElem}");
