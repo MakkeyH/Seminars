@@ -26,22 +26,18 @@ void PrintArray(int[] arr)
     Console.Write("]");
 }
 
-int[] GetSumOddNumbers(int[] arr)
+int[] SumElemOddIndex(int[] arr)
 {
     int sum = 0;
-    
-    for (int i = 0; i < arr.Length; i++)
+    for (int i = 1; i < arr.Length; i + 2)
     {
-        if (i % 2 == 1) sum += arr[i];
+       sum += arr[i];
     }
     return sum;
 }
 
-
-
-
 int[] array = CreateArrayRndInt(7, -90, 40);
 PrintArray(array);
 
-int[] result = GetSumOddNumbers(array);
-Console.WriteLine($"Сумма элементов массива с нечетным индексом = {result}");
+int[] result = SumElemOddIndex(array);
+Console.WriteLine($"-> {result}");
