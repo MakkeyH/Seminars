@@ -26,18 +26,18 @@ void PrintArray(int[] arr)
     Console.Write("]");
 }
 
-int[] SumElemOddIndex(int[] arr)
+int SumElemOddIndex(int[] arr)
 {
     int sum = 0;
-    for (int i = 1; i < arr.Length; i + 2)
+    for (int i = 1; i < arr.Length; i += 2)
     {
        sum += arr[i];
     }
     return sum;
 }
 
-int[] array = CreateArrayRndInt(7, -90, 40);
+int[] array = CreateArrayRndInt(7, -10, 50);
 PrintArray(array);
 
-int[] result = SumElemOddIndex(array);
+int result = SumElemOddIndex(array);
 Console.WriteLine($"-> {result}");
