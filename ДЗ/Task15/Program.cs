@@ -13,8 +13,7 @@ void Weekday(int d)
     else if (d == 3) Console.Write($"{d} - Среда");
     else if (d == 4) Console.Write($"{d} - Четверг");
     else if (d == 5) Console.Write($"{d} - Пятница");
-    else if (d == 6) Console.Write($"{d} - Ура!Суббота!Выходной");
-    else if (d == 7) Console.Write($"{d} - Ура!Воскресенье!Выходной");
+    else if (d == 6 || d == 7) Console.Write($"{d} - Ура!!!Выходной");
     else Console.WriteLine("Такого дня недели не существует");
 }
 
