@@ -15,10 +15,10 @@ if (n < 1)
 
 void SquareTable(int num)
 {
-    for (int i = 1; i <= num;i++)
+    for (int i = 1; i <= num; i++)
     {
-        int square = i*i;
-        Console.WriteLine($"{i, 1}  {square, 3}");
+        int square = i * i;
+        Console.Write($"{square} ");
     }
 }
 
