@@ -31,15 +31,15 @@ void PrintMatrix(int[,] matrix)
 }
 
 
-void ChangeRows(int[,] matrix)
+void ChangeRows(int[,] matrix, int firstRow, int secondRow)
 {
-    int firstRow = 0;
-    int lastRow = matrix.GetLength(0) - 1;
+    // int firstRow = 0;
+    // int lastRow = matrix.GetLength(0) - 1;
     for (int j = 0; j < matrix.GetLength(1); j++)
     {
         int temp = matrix[firstRow, j];
-        matrix[firstRow, j] = matrix[lastRow, j];
-        matrix[lastRow, j] = temp;
+        matrix[firstRow, j] = matrix[secondRow, j];
+        matrix[secondRow, j] = temp;
     }
 }
 
@@ -48,5 +48,7 @@ int[,] array2d = CreateMatrixRndInt(3, 6, -10, 37);
 PrintMatrix(array2d);
 Console.WriteLine();
 
-ChangeRows(array2d);
+
+int lastRow = array2d.GetLength(0) - 1;
+ChangeRows(array2d, 0, lastRow);
 PrintMatrix(array2d);
