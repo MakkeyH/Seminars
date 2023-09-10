@@ -9,9 +9,13 @@
 
 Console.WriteLine("Введите номер строки и столбца в двумерном массиве: ");
 int a = Convert.ToInt32(Console.ReadLine()); // первая позиция элемента будет строкой;
-a = Math.Abs(a);
 int b = Convert.ToInt32(Console.ReadLine()); // вторая позиция элемента будет столбцом;
-b = Math.Abs(b);
+
+if (a < 0 || b < 0)
+{
+    Console.WriteLine("Некорректный ввод");
+    return;
+}
 
 
 int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
@@ -36,22 +40,22 @@ void PrintMatrix(int[,] matrix)
         Console.WriteLine();
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write($"{matrix[i, j], 8}");
+            Console.Write($"{matrix[i, j],8}");
         }
         Console.WriteLine();
     }
 }
 
-bool ElementValue(int[,] matrix, int i, int j)
+void ElementValue(int[,] matrix, int i, int j)
 {
-    if (i < matrix.GetLength(0) && j < matrix.GetLength(1)) Console.WriteLine(matrix[i,j]);
-    else Console.WriteLine($"{i},{j} -> Такого элемента не существует");
+    if (i < matrix.GetLength(0) && j < matrix.GetLength(1))
+    { Console.WriteLine(matrix[i-1, j-1]); }
+    else Console.WriteLine("Такого элемента в массиве не существует");
 }
 
 int[,] array2d = CreateMatrixRndInt(3, 4, -67, 125);
 PrintMatrix(array2d);
 Console.WriteLine();
 
-bool result = ElementValue(array2d, a, b);
-Console.WriteLine(result);
+ElementValue(array2d, a, b);
 
