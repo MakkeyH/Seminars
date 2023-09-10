@@ -12,7 +12,7 @@ int[,] CreateMatrixRndInt(int rows, int columns, int min, int max)
     int[,] matrix = new int[rows, columns];
     Random rnd = new Random();
 
-    for (int i = 0; i < matrix.GetLength(0); j++)
+    for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
@@ -38,21 +38,26 @@ void PrintMatrix(int[,] matrix)
 double[] ArithmeticSumofColumn(int[,] matrix)
 {
     double[] array = new double[matrix.GetLength(1)];
-    int sum = 0;
-    for (int j = 0; j < matrix.GetLength(1); i++)
+    double sum = 0;
+    for (int j = 0; j < matrix.GetLength(1); j++)
     {
         for (int i = 0; i < matrix.GetLength(0); i++)
         {
-            array[j] = sum + array / matrix.GetLength(0);
+            sum += matrix[i, j];
         }
+        array[j] = Math.Round(sum / matrix.GetLength(0), 1);
+        sum = 0;
     }
-    return array[j];
-}
+    return array;
+}   
 
-int[,] array2d = CreateMatrixRndInt(4, 6, -50, 65);
-PrintMatrix(array2d);
-Console.WriteLine();
+    int[,] array2d = CreateMatrixRndInt(3, 3, -10, 10);
+    PrintMatrix(array2d);
+    Console.WriteLine();
 
-double[] result = Math.Round(ArithmeticSumofColumn(array[j]), 1);
-PrintMatrix(result);
+    double[] result = ArithmeticSumofColumn(array2d);
+    Console.WriteLine(string.Join(" ", result));
+    
+
+
 
