@@ -31,22 +31,23 @@ void PrintMatrix(int[,] matrix)
 }
 
 
-int[,] SwapRowsColumnsArray(int[,] matrix)
+int[,] ChangeRows(int[,] matrix)
 {
-    
+    int firstRow = 0;
+    int lastRow = matrix.GetLength(0) - 1;
     for (int j = 0; j < matrix.GetLength(1); j++)
-    {
-        int temp = matrix[0, j];
-        matrix[0, j] = matrix[matrix.GetLength(0) - 1, j];
-        matrix[matrix.GetLength(0) - 1, j] = temp;
+    {  
+        int temp = matrix[firstRow, j];
+        matrix[firstRow, j] = matrix[lastRow, j];
+        matrix[lastRow, j] = temp;
     }
     return matrix;
 }
 
 
-int[,] array2d = CreateMatrixRndInt(3, 4, -30, 30);
+int[,] array2d = CreateMatrixRndInt(3, 6, -10, 37);
 PrintMatrix(array2d);
 Console.WriteLine();
 
-SwapRowsColumnsArray(array2d);
+ChangeRows(array2d);
 PrintMatrix(array2d);
