@@ -24,7 +24,7 @@ void PrintMatrix(int[,] matrix)
         Console.WriteLine();
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            Console.Write($"{matrix[i, j],4}");
+            Console.Write($"{matrix[i, j], 3}");
         }
         Console.WriteLine();
     }
@@ -32,19 +32,20 @@ void PrintMatrix(int[,] matrix)
 
 void ChangeRows(int[,] matrix, int firstRow, int secondRow)
 {
-    // int firstRow = 0;
-    // int lastRow = matrix.GetLength(0) - 1;
-    for (int j = 0; j < matrix.GetLength(1); j++)
-    {
-        (matrix[secondRow, j], matrix[firstRow, j]) = (matrix[firstRow, j], matrix[secondRow, j]);
-    }
+// int firstRow = 0;
+// int secondRow = matrix.GetLength(0) - 1;
+for (int j = 0; j < matrix.GetLength(1); j++)
+{
+int temp = matrix[firstRow, j];
+matrix[firstRow, j] = matrix[secondRow, j];
+matrix[secondRow, j] = temp;
+// (matrix[secondRow, j], matrix[firstRow, j]) = (matrix[firstRow, j], matrix[secondRow, j]); //вариант с использованием кортежа
+}
 }
 
-
-int[,] array2d = CreateMatrixRndInt(5, 4, -10, 37);
+int[,] array2d = CreateMatrixRndInt(3, 4, -5, 25);
 PrintMatrix(array2d);
 Console.WriteLine();
-
 
 int lastRow = array2d.GetLength(0) - 1;
 ChangeRows(array2d, 0, lastRow);
