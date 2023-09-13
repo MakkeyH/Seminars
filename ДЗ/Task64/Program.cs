@@ -6,22 +6,17 @@
 Console.WriteLine("Введите целое натуральное число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 
-if (number < 1)
-{
-    Console.WriteLine("Введены некорректные данные");
-    return;
-}
+if (number < 1) Console.WriteLine("Число не натуральное");
 
-int NatureValue(int num)
+void NaturalValue(int num)
 {
-    int result = 0;
-    for (int i = num; i >= 1; i--)
+    while (num >= 1)
     {
-        result += i;
+        Console.Write($"{num} ");
+        num--;
     }
-    return result;
 }
 
-int result = NatureValue(number);
-Console.Write($"N = {number} -> {result}");
+NaturalValue(number);
+
 
